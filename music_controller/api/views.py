@@ -85,6 +85,7 @@ class CreateRoomView(APIView):
 
 class UserInRoom(APIView):
     def get(self, request, format=None):
+        print(self.request.session.items())
         if not self.request.session.exists(self.request.session.session_key):
             self.request.session.create()
 
